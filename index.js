@@ -65,6 +65,3 @@ app.get("/products/:category");
 app.listen(3000, () => {
     console.log("Connection to 3000 is approved");
 });
-
-// cd c:/Denis/Projects/'Web Development'/Study/"MongoDB with Express"
-// node -i -e "$(< index.js)"
