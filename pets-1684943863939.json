@@ -1,0 +1,74 @@
+[
+    {
+        "color": "red",
+        "type": "fox",
+        "size": "nano",
+        "name": "Maroon"
+    },
+    {
+        "color": "yellow",
+        "type": "rubber-duck",
+        "size": "nano",
+        "name": "Lucy"
+    },
+    {
+        "color": "white",
+        "type": "dog",
+        "size": "nano",
+        "name": "Blue"
+    },
+    {
+        "color": "black",
+        "type": "cat",
+        "size": "nano",
+        "name": "Bella"
+    },
+    {
+        "color": "white",
+        "type": "dog",
+        "size": "nano",
+        "name": "Dexter"
+    },
+    {
+        "color": "yellow",
+        "type": "rubber-duck",
+        "size": "nano",
+        "name": "Colonel"
+    },
+    {
+        "color": "white",
+        "type": "dog",
+        "size": "nano",
+        "name": "Ralph"
+    },
+    {
+        "color": "yellow",
+        "type": "rubber-duck",
+        "size": "nano",
+        "name": "Chirpy"
+    },
+    {
+        "color": "white",
+        "type": "dog",
+        "size": "nano",
+        "name": "Maggie"
+    },
+    {
+        "color": "red",
+        "type": "fox",
+        "size": "nano",
+        "name": "Finch"
+    },
+    {
+        "color": "white",
+        "type": "dog",
+        "size": "nano",
+        "name": "Midnight"
+    },
+    {
+        "color": "red",
+        "type": "fox",
+        "size": "nano",
+        "name": "Ember"
+    }
+]
