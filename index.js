@@ -21,8 +21,8 @@ app.use(methodOverride("_method"));
 
 const Product = require("./models/product");
 
+//Render Products by Category or All Products
 app.get("/products", async (req, res) => {
-    //Render Products by Category or All Products
     const category = req.query.category;
     if ((category != undefined) & (category != "all")) {
         const name =
@@ -39,39 +39,39 @@ app.get("/products", async (req, res) => {
     }
 });
 
+//Show New Product Page
 app.get("/products/new", (req, res) => {
-    //Show New Product Page
     res.render("products/new");
 });
 
+//Add New Product
 app.post("/products", async (req, res) => {
-    //Add New Product
     const newProduct = new Product(req.body);
     await newProduct.save();
     res.redirect(`/products/${newProduct._id}`);
 });
 
+//Render Details about product
 app.get("/products/:id", async (req, res) => {
-    //Render Details about product
     const foundProduct = await Product.findById(req.params.id);
     res.render("products/detail", {foundProduct});
 });
 
+//Edit Product Page
 app.get("/products/:id/edit", async (req, res) => {
-    //Edit Product Page
     const product = await Product.findById(req.params.id);
     res.render("products/edit", {product});
 });
 
+//Send Edited Product
 app.put("/products/:id", async (req, res) => {
-    //Send Edited Product
     const product = await Product.findByIdAndUpdate(req.params.id, req.body);
     await product.save();
     res.redirect(`/products/${product._id}`);
 });
 
+//Delete Product
 app.delete("/products/:id", async (req, res) => {
-    //Delete Product
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
     res.redirect("/products?category=all");
 });
