@@ -22,7 +22,7 @@ app.use(methodOverride("_method"));
 const Product = require("./models/product");
 
 app.get("/products", async (req, res) => {
-    //Render Products
+    //Render Products by Category or All Products
     const category = req.query.category;
     console.log(category);
     if ((category != undefined) & (category != "all")) {
@@ -76,8 +76,6 @@ app.delete("/products/:id", async (req, res) => {
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
     res.redirect("/products?category=all");
 });
-
-// app.get("/products/:category");
 
 app.listen(3000, () => {
     console.log("Connection to 3000 is approved");
