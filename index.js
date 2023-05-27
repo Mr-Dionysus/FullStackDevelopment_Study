@@ -60,11 +60,12 @@ app.put("/products/:id", async (req, res) => {
     res.redirect(`/products/${product._id}`);
 });
 
-app.get("/products/:category");
+app.delete("/products/:id", async (req, res) => {
+    res.send("Deleting...");
+});
+
+// app.get("/products/:category");
 
 app.listen(3000, () => {
     console.log("Connection to 3000 is approved");
 });
-
-// cd c:/Denis/Projects/'Web Development'/Study/"MongoDB with Express"
-// node -i -e "$(< index.js)"
