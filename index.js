@@ -22,9 +22,22 @@ app.use(methodOverride("_method"));
 const Product = require("./models/product");
 
 app.get("/products", async (req, res) => {
-    //Render All Products
-    const products = await Product.find({});
-    res.render("products/index", {products});
+    //Render Products
+    const category = req.query.category;
+    console.log(category);
+    if ((category != undefined) & (category != "all")) {
+        const name =
+            "All " +
+            category[0].toUpperCase() +
+            category.slice(1) +
+            " Products";
+        const products = await Product.find({category: category});
+        res.render("products/index", {products, category, name});
+    } else if (category === "all") {
+        const name = "All Products";
+        const products = await Product.find({});
+        res.render("products/index", {products, category, name});
+    }
 });
 
 app.get("/products/new", (req, res) => {
@@ -55,13 +68,13 @@ app.put("/products/:id", async (req, res) => {
     //Send Edited Product
     const product = await Product.findByIdAndUpdate(req.params.id, req.body);
     await product.save();
-    console.log(req.body);
-    console.log(product);
     res.redirect(`/products/${product._id}`);
 });
 
 app.delete("/products/:id", async (req, res) => {
-    res.send("Deleting...");
+    //Delete Product
+    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    res.redirect("/products?category=all");
 });
 
 // app.get("/products/:category");

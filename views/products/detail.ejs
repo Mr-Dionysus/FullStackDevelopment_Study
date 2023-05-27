@@ -11,16 +11,21 @@
         <section>
             <p><%= `Price = ${foundProduct.price}` %></p>
             <p>
-                <%= 'Category = ' + foundProduct.category[0].toUpperCase() +
-                foundProduct.category.slice(1,) %>
+                <a href="/products?category=<%= foundProduct.category %>"
+                    ><%= 'Category = ' + foundProduct.category[0].toUpperCase()
+                    + foundProduct.category.slice(1,) %>
+                </a>
             </p>
             <a href="/products/<%= foundProduct._id %>/edit"><b>Edit</b></a>
         </section>
         <br />
-        <a href="/products"><b>All Products</b></a>
+        <a href="/products?category=all"><b>All Products</b></a>
         <section>
-            <form action="/products?_method=DELETE" method="POST">
-                <button>Delete?</button>
+            <form
+                action="/products/<%= foundProduct._id %>?_method=DELETE"
+                method="POST"
+            >
+                <br /><button>Delete Product</button>
             </form>
         </section>
     </body>
