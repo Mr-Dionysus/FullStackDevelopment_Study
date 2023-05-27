@@ -24,7 +24,6 @@ const Product = require("./models/product");
 app.get("/products", async (req, res) => {
     //Render Products by Category or All Products
     const category = req.query.category;
-    console.log(category);
     if ((category != undefined) & (category != "all")) {
         const name =
             "All " +
