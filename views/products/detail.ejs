@@ -8,11 +8,13 @@
     </head>
     <body>
         <h1><%= foundProduct.name %></h1>
+
+        <!-- Page with Product Info and Category Filter-->
         <section>
-            <p><%= `Price = ${foundProduct.price}` %></p>
+            <p><%= `Price - ${foundProduct.price}` %></p>
             <p>
                 <a href="/products?category=<%= foundProduct.category %>"
-                    ><%= 'Category = ' + foundProduct.category[0].toUpperCase()
+                    ><%= 'Category - ' + foundProduct.category[0].toUpperCase()
                     + foundProduct.category.slice(1,) %>
                 </a>
             </p>
@@ -20,12 +22,14 @@
         </section>
         <br />
         <a href="/products?category=all"><b>All Products</b></a>
+
+        <!-- Deleting Product -->
         <section>
             <form
                 action="/products/<%= foundProduct._id %>?_method=DELETE"
-                method="POST"
-            >
-                <br /><button>Delete Product</button>
+                method="POST">
+                <br />
+                <button>Delete Product</button>
             </form>
         </section>
     </body>

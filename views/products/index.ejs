@@ -8,6 +8,8 @@
     </head>
     <body>
         <h1><%= name %></h1>
+
+        <!-- Make List of Products -->
         <ul>
             <% for (let product of products) {%>
             <li>
@@ -20,17 +22,19 @@
         </ul>
         <b><a href="/products/new">New Product</a></b>
 
+        <!-- Added Filter by Category with Selection -->
         <form action="/products?category=<%= category %>" method="GET">
             <br />
             <label for="category">Filter by Category</label>
             <select name="category" id="category">
                 <option value="fruit" <%= category === 'fruit' ? 'selected' : '' %>>Fruit</option>
                 <option value="vegetable" <%= category === 'vegetable' ? 'selected' : '' %>>Vegetable</option>
-                <% if (category != undefined & category != 'all') {%>
+
+                <% if (category != undefined && category != 'all') {%>
                     <option value="all" >All</option>
                 <% } else if (category === 'all') {%>
                     <option value="all"<%= 'selected' %> >All</option>
-                <% } %>
+                =<% } %>
             </select>
             <button>Filter</button>
         </form>

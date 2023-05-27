@@ -6,7 +6,7 @@ mongoose
     .then(() => {
         console.log("Connection to MongoDB is open");
     })
-    .catch((err) => {
+    .catch(err => {
         console.log(err);
     });
 
@@ -34,9 +34,9 @@ const seedProducts = [
 ];
 
 Product.insertMany(seedProducts)
-    .then((res) => {
+    .then(res => {
         console.log(res);
     })
-    .catch((err) => {
+    .catch(err => {
         console.log(err);
     });
