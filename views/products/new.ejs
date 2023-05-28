@@ -11,15 +11,24 @@
 
         <!-- Page for Creating Product -->
         <form action="/products" method="POST">
-            <label for="name" id="name">Product</label>
-            <input type="text" id="name" name="name" />
-            <label for="price" id="price">Price</label>
-            <input type="number" id="price" name="price" />
-            <label for="category" id="category">Category</label>
-            <select name="category" id="category">
-                <option value="fruit">Fruit</option>
-                <option value="vegetable">Vegetable</option>
-            </select>
+            <div>
+                <label for="name" id="name">Product</label>
+                <input type="text" id="name" name="name" />
+            </div>
+
+            <div>
+                <label for="price" id="price">Price</label>
+                <input type="number" id="price" name="price" />
+            </div>
+
+            <div>
+                <label for="category" id="category">Category</label>
+                <select name="category" id="category">
+                    <option value="fruit">Fruit</option>
+                    <option value="vegetable">Vegetable</option>
+                </select>
+            </div>
+
             <button>Add</button>
         </form>
     </body>
